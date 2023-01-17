@@ -33,7 +33,7 @@ function initPlayer() {
     },
   });
   var video = demo.video;
-  var currentSource = process.env.NEXT_PUBLIC_PRODUCTION_ENV_VARIABLE;
+  var currentSource = process.env.NEXT_PUBLIC_ENV_VARIABLE;
   if (Hls.isSupported()) {
     var hls = new Hls();
     hls.loadSource(currentSource);
