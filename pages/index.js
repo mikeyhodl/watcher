@@ -3,8 +3,7 @@ import { Inter } from "@next/font/google";
 import Script from "next/script";
 import Moovie from "mooviejs";
 import Hls from "hls.js";
-import sources from '../sources.json';
-
+// import sources from '../sources.json';
 
 function initPlayer() {
   var demo = new Moovie({
@@ -34,8 +33,7 @@ function initPlayer() {
     },
   });
   var video = demo.video;
-  var currentSource =
-  sources.currentSource;
+  var currentSource = process.env.NEXT_PUBLIC_ENV_VARIABLE;
   if (Hls.isSupported()) {
     var hls = new Hls();
     hls.loadSource(currentSource);
